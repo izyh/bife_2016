@@ -88,7 +88,7 @@ article td{
     padding: 5px;
     border: 1px gainsboro solid;
 }
-.lastLine{
+tfoot{
     background-color: gainsboro;
 }
 aside{
@@ -150,7 +150,7 @@ form .buttonType{
     border-radius: 8px;
     border: solid 1px gainsboro;
 }
-.formGroup textarea{
+form textarea{
     width: 100%;
     height: 8em;
 }
@@ -164,4 +164,57 @@ footer p{
     padding-top: 30px;
     text-indent: 0;
     height: 80px;
+}
+#menu-bar{
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+#menu-bar ul{
+    position: absolute;/*相对定位，不对下拉菜单下面的元素布局造成影响*/
+    height: 100%;/*默认overflow: visible*/
+    width: 100%;
+    background-color: dodgerblue;
+}
+#menu-bar ul li{
+    float: left;
+    width: 180px;/*默认height: auto*/
+    text-align: center;
+    list-style-type: none;
+}
+#menu-bar ul li > a{
+    display: block;
+    line-height: 50px;
+    height: 100%;
+    width: 100%;
+    border-right: solid 1px black;
+    text-decoration: none;/*去掉默认的下划线*/
+    color: white;
+}
+#menu-bar ul ul{
+    display: none;/*二级菜单默认不显示*/
+    position: static;/*不需要绝对定位了*/
+    height: auto;/*根据内容来确定高度*/
+    width: 179px;
+    border: solid 1px black;
+    margin-top: 2px;
+}
+#menu-bar li:hover > ul{
+    display: block;/*hover的时候再显示出来，要为block元素*/
+}
+#menu-bar ul ul li{
+    float: none;/*不需要左浮动了，<li>默认为块状元素，因此自动分行显示*/
+    position: relative;/*第三级菜单绝对定位的基础*/
+    width: 100%;
+    list-style-type: none;
+}
+#menu-bar ul ul li > a{
+    border: none;
+}/*去掉这一条边框线，否则会叠加到第三级导航菜单上*/
+#menu-bar ul ul ul{
+    position: absolute;
+    top: 30%;
+    left: 90%;/*相对于上一级的<li>做绝对定位*/
+    width: 180px;
+    z-index: 1000;/*叠在最上层*/
 }
