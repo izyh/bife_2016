@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 400px;
+    min-height: 200px;
+}
+
+.grey {
+    position: absolute;  /*相对<html>做绝对定位*/
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
+}
+
+.yellow {
+    position: absolute;  /*相对灰色背景的<div>做绝对定位*/
+    width: 50px;
+    height: 50px;
+    background-color: #fc0;
+}
+
+.left {
+    top: 0;
+    left: 0;
+    border-radius: 0 0 50px 0;
+}
+
+.right {
+    bottom: 0;
+    right: 0;
+    border-radius: 50px 0 0 0;
+}
