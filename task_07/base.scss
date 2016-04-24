@@ -1,0 +1,687 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1280px;
+}
+
+/*mixin*/
+
+@mixin triangle($width, $height, $position, $orientation, $color) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  margin: 0;
+  padding: 0;
+  @each $prop, $value in $position {
+    #{$prop}: $value;
+  }
+  @if($orientation==left) {
+    border-top: $height/2 solid transparent;
+    border-right: $width solid $color;
+    border-bottom: $height/2 solid transparent;
+  }@else if($orientation==right) {
+    border-top: $height/2 solid transparent;
+    border-left: $width solid $color;
+    border-bottom: $height/2 solid transparent;
+  }@else if($orientation==up) {
+    border-left: $width/2 solid transparent;
+    border-bottom: $height solid $color;
+    border-right: $width/2 solid transparent;
+  }@else if($orientation==down) {
+    border-left: $width/2 solid transparent;
+    border-top: $height solid $color;
+    border-right: $width/2 solid transparent;
+  }@else if($orientation==top-left) {
+    border-top: $height solid $color;
+    border-right: $width solid transparent;
+  }@else if($orientation==top-right) {
+    border-top: $height solid $color;
+    border-left: $width solid transparent;
+  }@else if($orientation==bottom-left) {
+    border-bottom: $height solid $color;
+    border-right: $width solid transparent;
+  }@else if($orientation==bottom-right) {
+    border-bottom: $height solid $color;
+    border-left: $width solid transparent;
+  }
+}
+
+/*header的样式*/
+
+$header-height: 57px;
+
+header {
+  width: 100%;
+  height: $header-height;
+}
+
+.logo {
+  float: left;
+  margin-left: 59px;
+  width: 105px;
+  height: $header-height;
+  img {
+    float: left;
+    padding: ($header-height - 31px)/2 0;
+  }
+  p {
+    font-size: 21px;
+    font-family: "黑体", sans-serif;
+    line-height: $header-height;
+    margin-left: 40px;
+  }
+}
+
+.login {
+  float: right;
+  margin-right: 65px;
+  width: 68px;
+  height: $header-height;
+  img {
+    float: left;
+    padding: ($header-height - 17px)/2 0;
+  }
+  a {
+    font-size: 14px;
+    line-height: $header-height;
+    margin-left: 6px;
+    padding-bottom: 2px;
+    color: #e74f4d;
+    font-family: "Microsoft YaHei", sans-serif;
+    cursor: pointer;
+    &:hover {
+      color: #ff0000;
+    }
+  }
+}
+
+nav ul {
+  /*margin: 0 120px 0 500px;*/
+  margin-left: calc(100% - 750px);
+  font-size: 14px;
+  font-family: "Microsoft YaHei", sans-serif;
+  li {
+    list-style: none;
+    display: inline-block;
+    line-height: $header-height - 3px;
+    margin: 0 15px;
+    &:hover {
+      border-bottom: solid 3px #e74f4d;
+    }
+    a {
+      padding: 0 15px;
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: #e74f4d;
+      }
+    }
+  }
+  .active {
+    border-bottom: solid 3px #e74f4d;
+  }
+}
+
+/*banner的样式*/
+
+$banner-height: 690px;
+
+.banner {
+  position: relative;
+  height: $banner-height;
+  overflow: hidden;
+  .banner-img {
+    img {
+      width: 100%;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      height: $banner-height;
+      width: 100%;
+      background-color: #030000;
+      opacity: 0.2;
+    }
+  }
+  .newLife {
+    position: absolute;
+    top: 220px;
+    left: 110px;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #fff;
+    h3 {
+      font-size: 60px;
+    }
+    p {
+      font-size: 21px;
+      line-height: 30px;
+      margin: 10px;
+    }
+    button {
+      margin: 65px 10px;
+      padding: 15px 100px;
+      font-size: 30px;
+      color: #fff;
+      border: none;
+      background-color: #e74f4d;
+      &:hover {
+        background-color: #e75f5d;
+      }
+    }
+  }
+}
+
+/*services的样式*/
+
+.services {
+  height: 250px;
+  padding: 45px 0 65px 0;
+  div {
+    display: inline-block;
+    width: calc(25% - 6px);
+    text-align: center;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+    p {
+      margin-top: 47px;
+      border-right: solid 2px #767777;
+      span {
+        display: inline-block;
+        width: 154px;
+        height: 50px;
+        color: #767777;
+        font-size: 14px;
+        line-height: 18px;
+        font-family: "黑体", sans-serif;
+      }
+    }
+  }
+  .last p {
+    border-right: none;
+  }
+}
+
+/*others样式*/
+
+.others {
+  height: 360px;
+  text-align: center;
+  background-color: #ededec;
+  img {
+    margin: 90px 0 50px 0;
+  }
+  p {
+    font-size: 53.59px;
+    line-height: 56.6px;
+    color: rgba(50,51,51,0.5);
+  }
+}
+
+/*map的样式*/
+
+.map {
+  position: relative;
+  height: 340px;
+  text-align: center;
+  .map-img {
+    img {
+      width: 100%;
+      height: 340px;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      height: 340px;
+      width: 100%;
+      background-color: #aa3432;
+      opacity: 0.2;
+    }
+  }
+  .search {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    font-family: "Microsoft YaHei", sans-serif;
+    h5 {
+      font-size: 21px;
+      line-height: 12px;
+      color: #fff;
+      font-weight: normal;
+    }
+    hr {
+      display: inline-block;
+      width: 30px;
+      border: none;
+      border-bottom: solid 2px #fff;
+    }
+    p {
+      font-size: 12px;
+      line-height: 52px;
+      color: #fff;
+    }
+    form {
+      margin-top: 33px;
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 236px;
+        height: 36px;
+        padding: 0 25px 0 10px;
+        margin: 0 15px;
+        border: none;
+        font-size: 12px;
+        color: #a8aaaa;
+        background: url("img/21.png") no-repeat 98% center transparent;
+        background-color: #fff;
+      }
+      input[type=submit] {
+        width: 236px;
+        height: 36px;
+        margin: 0 15px;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        background-color: #be4e48;
+        &:hover {
+          background-color: #b85858;
+        }
+      }
+    }
+  }
+}
+
+/*activity的样式*/
+
+.activity {
+  height: 600px;
+  background-color: #f8f8f7;
+  text-align: center;
+  padding: 100px 0;
+  .wrap {
+    div {
+      display: inline-block;
+      margin: 0 18px;
+      font-family: "Microsoft YaHei", sans-serif;
+      img {
+        padding: 12px 8px;
+        background-color: #fff;
+        border: solid 1px #d2d2d2;
+        box-shadow: 2px 1px 1px #d2d2d2;
+      }
+      h6 {
+        font-size: 16px;
+        line-height: 35px;
+        font-weight: normal;
+        span {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-size: 14px;
+        line-height: 28px;
+        color: #d2d2d2;
+      }
+    }
+  }
+}
+
+/*detail的样式*/
+
+.detail {
+  height: 566px;
+  font-size: 0;
+  .wrap1 {
+    position: relative;
+    display: inline-block;
+    width: 66%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .wrap3 {
+      position: absolute;
+      top: 130px;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+      h2 {
+        font-size: 49.47px;
+        line-height: 45px;
+        font-weight: normal;
+        span {
+          font-size: 157.79px;
+          line-height: 145px;
+        }
+      }
+      p {
+        padding-top: 15px;
+        font-size: 22px;
+        line-height: 43px;
+      }
+    }
+    .triangle-left {
+      @include triangle(26px, 31px, (top: calc(50% - 12px), right: 0), left, #fff);
+    }
+  }
+  .wrap2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 34%;
+    padding-top: 164px;
+    font-family: "宋体", sans-serif;
+    h4 {
+      font-size: 22px;
+      text-align: center;
+      span {
+        color: red;
+      }
+    }
+    p {
+      width: 288px;
+      height: 115px;
+      margin: 30px auto;
+      font-size: 12px;
+      line-height: 30px;
+      color: #aaa;
+    }
+    button {
+      display: block;
+      width: 107px;
+      height: 35px;
+      margin: 50px auto 25px auto;
+      font-size: 12px;
+      color: #e25c60;
+      border: solid 1px #e25c60;
+      background-color: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+      &:hover {
+        color: #fff;
+        background-color: #e25c60;
+      }
+    }
+    .circle-group {
+      width: 78px;
+      margin: 0 auto;
+      .circle {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 7px;
+        border-radius: 6px;
+        border: solid 1px #929293;
+        cursor: pointer;
+      }
+      .active {
+        background-color: #929293;
+      }
+    }
+  }
+}
+
+/*about样式*/
+
+.about {
+  position: relative;
+  height: 520px;
+  font-size: 0;
+  div {
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    padding-top: 173px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 21px;
+    line-height: 30px;
+    font-family: "黑体", sans-serif;
+    hr {
+      width: 30px;
+      margin: 24px auto;
+      border: none;
+      border-bottom: solid 2px;
+    }
+  }
+  img {
+    display: inline-block;
+    width: 34%;
+    height: 100%;
+  }
+  button {
+    width: 170px;
+    height: 44px;
+    font-size: 21px;
+    line-height: 24px;
+    border: solid 1px;
+    font-family: "黑体", sans-serif;
+  }
+  .triangle-right {
+    @include triangle(26px, 31px, (top: calc(50% - 15.5px), right: calc(34% - 26px)), right, #fff);
+  }
+  .red {
+    color: #fff;
+    background-color: #e74f4d;
+    hr {
+      border-bottom-color: #fff;
+    }
+    button {
+      color: #fff;
+      border-color: #fff;
+      background-color: #e74f4d;
+      &:hover {
+        color: #e74f4d;
+        background-color: #fff;
+      }
+    }
+  }
+  .white {
+    color: #e74f4d;
+    hr {
+      border-bottom-color: #e74f4d;
+    }
+    button {
+      color: #e74f4d;
+      border-color: #e74f4d;
+      background-color: #fff;
+      &:hover {
+        color: #fff;
+        background-color: #e74f4d;
+      }
+    }
+  }
+}
+
+/*join的样式*/
+
+.join {
+  height: 750px;
+  .volunteer {
+    padding: 100px 0;
+    text-align: center;
+    h5 {
+      font-size: 21px;
+      line-height: 30px;
+      font-weight: normal;
+      font-family: "黑体", sans-serif;
+    }
+    hr {
+      width: 30px;
+      margin: 12px auto;
+      border: none;
+      border-bottom: solid 2px #e74f4d;
+    }
+    p {
+      padding: 5px 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: #aaa;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+  }
+  .wrap {
+    font-size: 0;
+    width: 1012px;
+    margin: 0 auto;
+    .protocol {
+      display: inline-block;
+      vertical-align: top;
+      width: 288px;
+      margin: 8px 69px 8px 0;
+      color: #231815;
+      h6 {
+        padding-bottom: 27px;
+        font-size: 14px;
+        font-weight: normal;
+        font-family: "黑体", sans-serif;
+      }
+      p, a {
+        font-size: 12px;
+        color: #aaa;
+        font-family: "宋体", sans-serif;
+      }
+      a {
+        display: block;
+        width: 100%;
+        text-align: right;
+        text-decoration: none;
+        img {
+          margin-right: 5px;
+        }
+      }
+    }
+    .term {
+      margin-bottom: 30px;
+    }
+    form {
+      display: inline-block;
+      vertical-align: top;
+      width: 655px;
+      font-family: "宋体", sans-serif;
+      input[type=text] {
+        width: 311px;
+        height: 41px;
+        margin: 8px;
+        padding: 15px 17px;
+        font-size: 12px;
+        color: #231815;
+        background-color: #ededef;
+        border: none;
+      }
+      textarea {
+        width: 639px;
+        height: 121px;
+        margin: 8px;
+        padding: 15px 17px;
+        border: none;
+        resize: none;
+        font-size: 12px;
+        color: #231815;
+        background-color: #ededef;
+      }
+      input[type=submit] {
+        margin: 8px;
+        width: 639px;
+        height: 41px;
+        border: none;
+        color: #323333;
+        font-size: 14px;
+        background-color: #ededef;
+        font-family: "黑体", sans-serif;
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+    }
+  }
+}
+
+/*contact的样式*/
+
+.contact {
+  height: 360px;
+  text-align: center;
+  padding: 75px 0;
+  color: #fff;
+  background-color: #32363e;
+  h4 {
+    font-size: 21px;
+    line-height: 48px;
+    font-weight: normal;
+    font-family: "黑体", sans-serif;
+  }
+  p {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "宋体", sans-serif;
+  }
+  form {
+    margin: 30px 0;
+    font-size: 0;
+    input[type=text] {
+      width: 430px;
+      height: 40px;
+      font-size: 14px;
+      padding: 14px 11px;
+      border: none;
+      background-color: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    input[type=submit] {
+      width: 80px;
+      height: 40px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 20px;
+      border: none;
+      background-color: #6f7178;
+      font-family: "Microsoft YaHei", sans-serif;
+      &:hover {
+        background-color: #7f7f7f;
+      }
+    }
+  }
+  div {
+    margin: 8px 0;
+    a {
+      margin: 0 15px;
+    }
+  }
+}
+
+/*footer的样式*/
+
+footer {
+  height: 58px;
+  background-color: #2f3039;
+  color: #fff;
+  font-size: 12px;
+  line-height: 10px;
+  font-family: "宋体", sans-serif;
+  .copyright{
+    padding: 30px 0 18px 100px;
+  }
+  .to-top{
+    float: right;
+    padding: 30px 40px 18px 0;
+    a {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}

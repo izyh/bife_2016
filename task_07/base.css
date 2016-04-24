@@ -1,0 +1,646 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1280px;
+}
+
+/*mixin*/
+/*header的样式*/
+header {
+  width: 100%;
+  height: 57px;
+}
+
+.logo {
+  float: left;
+  margin-left: 59px;
+  width: 105px;
+  height: 57px;
+}
+.logo img {
+  float: left;
+  padding: 13px 0;
+}
+.logo p {
+  font-size: 21px;
+  font-family: "黑体", sans-serif;
+  line-height: 57px;
+  margin-left: 40px;
+}
+
+.login {
+  float: right;
+  margin-right: 65px;
+  width: 68px;
+  height: 57px;
+}
+.login img {
+  float: left;
+  padding: 20px 0;
+}
+.login a {
+  font-size: 14px;
+  line-height: 57px;
+  margin-left: 6px;
+  padding-bottom: 2px;
+  color: #e74f4d;
+  font-family: "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+.login a:hover {
+  color: #ff0000;
+}
+
+nav ul {
+  /*margin: 0 120px 0 500px;*/
+  margin-left: calc(100% - 750px);
+  font-size: 14px;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  line-height: 54px;
+  margin: 0 15px;
+}
+nav ul li:hover {
+  border-bottom: solid 3px #e74f4d;
+}
+nav ul li a {
+  padding: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover {
+  color: #e74f4d;
+}
+nav ul .active {
+  border-bottom: solid 3px #e74f4d;
+}
+
+/*banner的样式*/
+.banner {
+  position: relative;
+  height: 690px;
+  overflow: hidden;
+}
+.banner .banner-img img {
+  width: 100%;
+}
+.banner .banner-img:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 690px;
+  width: 100%;
+  background-color: #030000;
+  opacity: 0.2;
+}
+.banner .newLife {
+  position: absolute;
+  top: 220px;
+  left: 110px;
+  font-family: "Microsoft YaHei", sans-serif;
+  color: #fff;
+}
+.banner .newLife h3 {
+  font-size: 60px;
+}
+.banner .newLife p {
+  font-size: 21px;
+  line-height: 30px;
+  margin: 10px;
+}
+.banner .newLife button {
+  margin: 65px 10px;
+  padding: 15px 100px;
+  font-size: 30px;
+  color: #fff;
+  border: none;
+  background-color: #e74f4d;
+}
+.banner .newLife button:hover {
+  background-color: #e75f5d;
+}
+
+/*services的样式*/
+.services {
+  height: 250px;
+  padding: 45px 0 65px 0;
+}
+.services div {
+  display: inline-block;
+  width: calc(25% - 6px);
+  text-align: center;
+}
+.services div img {
+  width: 45px;
+  height: 45px;
+}
+.services div p {
+  margin-top: 47px;
+  border-right: solid 2px #767777;
+}
+.services div p span {
+  display: inline-block;
+  width: 154px;
+  height: 50px;
+  color: #767777;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "黑体", sans-serif;
+}
+.services .last p {
+  border-right: none;
+}
+
+/*others样式*/
+.others {
+  height: 360px;
+  text-align: center;
+  background-color: #ededec;
+}
+.others img {
+  margin: 90px 0 50px 0;
+}
+.others p {
+  font-size: 53.59px;
+  line-height: 56.6px;
+  color: rgba(50, 51, 51, 0.5);
+}
+
+/*map的样式*/
+.map {
+  position: relative;
+  height: 340px;
+  text-align: center;
+}
+.map .map-img img {
+  width: 100%;
+  height: 340px;
+}
+.map .map-img:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 340px;
+  width: 100%;
+  background-color: #aa3432;
+  opacity: 0.2;
+}
+.map .search {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.map .search h5 {
+  font-size: 21px;
+  line-height: 12px;
+  color: #fff;
+  font-weight: normal;
+}
+.map .search hr {
+  display: inline-block;
+  width: 30px;
+  border: none;
+  border-bottom: solid 2px #fff;
+}
+.map .search p {
+  font-size: 12px;
+  line-height: 52px;
+  color: #fff;
+}
+.map .search form {
+  margin-top: 33px;
+}
+.map .search form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 236px;
+  height: 36px;
+  padding: 0 25px 0 10px;
+  margin: 0 15px;
+  border: none;
+  font-size: 12px;
+  color: #a8aaaa;
+  background: url("img/21.png") no-repeat 98% center transparent;
+  background-color: #fff;
+}
+.map .search form input[type=submit] {
+  width: 236px;
+  height: 36px;
+  margin: 0 15px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  background-color: #be4e48;
+}
+.map .search form input[type=submit]:hover {
+  background-color: #b85858;
+}
+
+/*activity的样式*/
+.activity {
+  height: 600px;
+  background-color: #f8f8f7;
+  text-align: center;
+  padding: 100px 0;
+}
+.activity .wrap div {
+  display: inline-block;
+  margin: 0 18px;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.activity .wrap div img {
+  padding: 12px 8px;
+  background-color: #fff;
+  border: solid 1px #d2d2d2;
+  box-shadow: 2px 1px 1px #d2d2d2;
+}
+.activity .wrap div h6 {
+  font-size: 16px;
+  line-height: 35px;
+  font-weight: normal;
+}
+.activity .wrap div h6 span {
+  font-size: 30px;
+}
+.activity .wrap div p {
+  font-size: 14px;
+  line-height: 28px;
+  color: #d2d2d2;
+}
+
+/*detail的样式*/
+.detail {
+  height: 566px;
+  font-size: 0;
+}
+.detail .wrap1 {
+  position: relative;
+  display: inline-block;
+  width: 66%;
+  height: 100%;
+}
+.detail .wrap1 img {
+  width: 100%;
+  height: 100%;
+}
+.detail .wrap1 .wrap3 {
+  position: absolute;
+  top: 130px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.detail .wrap1 .wrap3 h2 {
+  font-size: 49.47px;
+  line-height: 45px;
+  font-weight: normal;
+}
+.detail .wrap1 .wrap3 h2 span {
+  font-size: 157.79px;
+  line-height: 145px;
+}
+.detail .wrap1 .wrap3 p {
+  padding-top: 15px;
+  font-size: 22px;
+  line-height: 43px;
+}
+.detail .wrap1 .triangle-left {
+  position: absolute;
+  width: 26px;
+  height: 31px;
+  margin: 0;
+  padding: 0;
+  top: calc(50% - 12px);
+  right: 0;
+  border-top: 15.5px solid transparent;
+  border-right: 26px solid #fff;
+  border-bottom: 15.5px solid transparent;
+}
+.detail .wrap2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 34%;
+  padding-top: 164px;
+  font-family: "宋体", sans-serif;
+}
+.detail .wrap2 h4 {
+  font-size: 22px;
+  text-align: center;
+}
+.detail .wrap2 h4 span {
+  color: red;
+}
+.detail .wrap2 p {
+  width: 288px;
+  height: 115px;
+  margin: 30px auto;
+  font-size: 12px;
+  line-height: 30px;
+  color: #aaa;
+}
+.detail .wrap2 button {
+  display: block;
+  width: 107px;
+  height: 35px;
+  margin: 50px auto 25px auto;
+  font-size: 12px;
+  color: #e25c60;
+  border: solid 1px #e25c60;
+  background-color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.detail .wrap2 button:hover {
+  color: #fff;
+  background-color: #e25c60;
+}
+.detail .wrap2 .circle-group {
+  width: 78px;
+  margin: 0 auto;
+}
+.detail .wrap2 .circle-group .circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 7px;
+  border-radius: 6px;
+  border: solid 1px #929293;
+  cursor: pointer;
+}
+.detail .wrap2 .circle-group .active {
+  background-color: #929293;
+}
+
+/*about样式*/
+.about {
+  position: relative;
+  height: 520px;
+  font-size: 0;
+}
+.about div {
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  padding-top: 173px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 21px;
+  line-height: 30px;
+  font-family: "黑体", sans-serif;
+}
+.about div hr {
+  width: 30px;
+  margin: 24px auto;
+  border: none;
+  border-bottom: solid 2px;
+}
+.about img {
+  display: inline-block;
+  width: 34%;
+  height: 100%;
+}
+.about button {
+  width: 170px;
+  height: 44px;
+  font-size: 21px;
+  line-height: 24px;
+  border: solid 1px;
+  font-family: "黑体", sans-serif;
+}
+.about .triangle-right {
+  position: absolute;
+  width: 26px;
+  height: 31px;
+  margin: 0;
+  padding: 0;
+  top: calc(50% - 15.5px);
+  right: calc(34% - 26px);
+  border-top: 15.5px solid transparent;
+  border-left: 26px solid #fff;
+  border-bottom: 15.5px solid transparent;
+}
+.about .red {
+  color: #fff;
+  background-color: #e74f4d;
+}
+.about .red hr {
+  border-bottom-color: #fff;
+}
+.about .red button {
+  color: #fff;
+  border-color: #fff;
+  background-color: #e74f4d;
+}
+.about .red button:hover {
+  color: #e74f4d;
+  background-color: #fff;
+}
+.about .white {
+  color: #e74f4d;
+}
+.about .white hr {
+  border-bottom-color: #e74f4d;
+}
+.about .white button {
+  color: #e74f4d;
+  border-color: #e74f4d;
+  background-color: #fff;
+}
+.about .white button:hover {
+  color: #fff;
+  background-color: #e74f4d;
+}
+
+/*join的样式*/
+.join {
+  height: 750px;
+}
+.join .volunteer {
+  padding: 100px 0;
+  text-align: center;
+}
+.join .volunteer h5 {
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: normal;
+  font-family: "黑体", sans-serif;
+}
+.join .volunteer hr {
+  width: 30px;
+  margin: 12px auto;
+  border: none;
+  border-bottom: solid 2px #e74f4d;
+}
+.join .volunteer p {
+  padding: 5px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #aaa;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.join .wrap {
+  font-size: 0;
+  width: 1012px;
+  margin: 0 auto;
+}
+.join .wrap .protocol {
+  display: inline-block;
+  vertical-align: top;
+  width: 288px;
+  margin: 8px 69px 8px 0;
+  color: #231815;
+}
+.join .wrap .protocol h6 {
+  padding-bottom: 27px;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "黑体", sans-serif;
+}
+.join .wrap .protocol p, .join .wrap .protocol a {
+  font-size: 12px;
+  color: #aaa;
+  font-family: "宋体", sans-serif;
+}
+.join .wrap .protocol a {
+  display: block;
+  width: 100%;
+  text-align: right;
+  text-decoration: none;
+}
+.join .wrap .protocol a img {
+  margin-right: 5px;
+}
+.join .wrap .term {
+  margin-bottom: 30px;
+}
+.join .wrap form {
+  display: inline-block;
+  vertical-align: top;
+  width: 655px;
+  font-family: "宋体", sans-serif;
+}
+.join .wrap form input[type=text] {
+  width: 311px;
+  height: 41px;
+  margin: 8px;
+  padding: 15px 17px;
+  font-size: 12px;
+  color: #231815;
+  background-color: #ededef;
+  border: none;
+}
+.join .wrap form textarea {
+  width: 639px;
+  height: 121px;
+  margin: 8px;
+  padding: 15px 17px;
+  border: none;
+  resize: none;
+  font-size: 12px;
+  color: #231815;
+  background-color: #ededef;
+}
+.join .wrap form input[type=submit] {
+  margin: 8px;
+  width: 639px;
+  height: 41px;
+  border: none;
+  color: #323333;
+  font-size: 14px;
+  background-color: #ededef;
+  font-family: "黑体", sans-serif;
+}
+.join .wrap form input[type=submit]:hover {
+  background-color: #e0e0e0;
+}
+
+/*contact的样式*/
+.contact {
+  height: 360px;
+  text-align: center;
+  padding: 75px 0;
+  color: #fff;
+  background-color: #32363e;
+}
+.contact h4 {
+  font-size: 21px;
+  line-height: 48px;
+  font-weight: normal;
+  font-family: "黑体", sans-serif;
+}
+.contact p {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "宋体", sans-serif;
+}
+.contact form {
+  margin: 30px 0;
+  font-size: 0;
+}
+.contact form input[type=text] {
+  width: 430px;
+  height: 40px;
+  font-size: 14px;
+  padding: 14px 11px;
+  border: none;
+  background-color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.contact form input[type=submit] {
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  background-color: #6f7178;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.contact form input[type=submit]:hover {
+  background-color: #7f7f7f;
+}
+.contact div {
+  margin: 8px 0;
+}
+.contact div a {
+  margin: 0 15px;
+}
+
+/*footer的样式*/
+footer {
+  height: 58px;
+  background-color: #2f3039;
+  color: #fff;
+  font-size: 12px;
+  line-height: 10px;
+  font-family: "宋体", sans-serif;
+}
+footer .copyright {
+  padding: 30px 0 18px 100px;
+}
+footer .to-top {
+  float: right;
+  padding: 30px 40px 18px 0;
+}
+footer .to-top a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .to-top a:hover {
+  color: red;
+}
+
+/*# sourceMappingURL=base.css.map */
