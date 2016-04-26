@@ -1,0 +1,217 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    height: 350px;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+}
+
+header .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.2;
+}
+
+header .title {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+    font-family: "Microsoft YaHei", sans-serif
+}
+
+main {
+    position: relative;
+    margin: -40px auto 30px;
+    width: 1280px;
+    font-size: 0;
+    background-color: #ffffdd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+    padding: 20px 30px;
+}
+
+.prominent {
+    margin-bottom: 80px;
+}
+
+main h2 {
+    margin: 10px 0;
+    padding: 0 5px;
+    font-size: 30px;
+    line-height: 40px;
+    border-left: solid 4px green;
+}
+
+main .item {
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    height: 400px;
+    margin: 28px;
+    padding: 20px 10px 10px;
+    text-align: center;
+    border: solid 2px gray;
+    border-radius: 20px 0;
+}
+
+main .item .preview {
+    width: 280px;
+    height: 250px;
+    padding: 0;
+    border: solid 1px #56abe4;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 25px;
+    padding-top: 10px;
+    font-family: "楷体", sans-serif;
+}
+
+main .item .button-group {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+main .item .button-group img {
+    height: 25px;
+    width: 25px;
+    margin: 7px 0;
+}
+
+main .item .button-group a {
+    display: inline-block;
+    width: 94px;
+    height: 40px;
+    background-color: #56abe4;
+}
+
+main .item .button-group a:hover {
+    background-color: #00A3CC;
+}
+
+main .item .button-group .left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+main .item .button-group .middle {
+    border-left: solid 1px #fff;
+    border-right: solid 1px #fff;
+}
+
+main .item .button-group .right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+main .item .button-group .disable, main .item .button-group .disable:hover {
+    background-color: #a8c8de;
+    cursor: not-allowed;
+}
+
+main .list .item {
+    border-radius: 0 20px;
+}
+
+.contact {
+    height: 210px;
+    background-color: #32363e;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-family: "楷体", sans-serif;
+}
+
+.contact h3 {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.contact p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.contact span {
+    color: #56abe4;
+}
+
+.contact .more {
+    position: relative;
+    margin-top: 20px;
+}
+
+.contact img {
+    margin: 0 20px;
+    width: 32px;
+    height: 32px;
+}
+
+.contact img:hover {
+    border: solid 4px transparent;
+}
+
+.contact .qq-qrCode {
+    position: absolute;
+    top: -250px;
+    left: calc(50% - 70px);
+    width: 200px;
+    height: 250px;
+    visibility: hidden;
+}
+
+.contact .qq:hover .qq-qrCode{
+    visibility: visible;
+}
+
+.contact .qq {
+    display: inline;
+}
+
+footer {
+    height:60px;
+    background-color: #2f3039;
+    text-align: center;
+}
+
+footer p {
+    line-height: 60px;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+footer a {
+    text-decoration: none;
+    color: #56abe4;
+}
+
+footer a:hover {
+    color: #00A3CC;
+}
+
+.clearfix:after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
