@@ -149,8 +149,13 @@ main .list .item {
     line-height: 30px;
 }
 
-.contact span {
+.contact .email {
+    font-size: 20px;
     color: #56abe4;
+    text-decoration: none;
+}
+.contact .email:hover {
+    color: #00A3CC;
 }
 
 .contact .more {
