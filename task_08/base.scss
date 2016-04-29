@@ -1,0 +1,78 @@
+@mixin resetCSS {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin generateContainer {
+  width: 100%;
+  max-width: 1400px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+@mixin generateRow {
+  width: 100%;
+  //margin-left: -10px;
+  //margin-right: -10px;
+  //margin-bottom: 20px;
+}
+
+@mixin generateCol($size) {
+  @for $i from 1 through 12 {
+    .col-#{$size}-#{$i} {
+      width: (100% / 12 * $i);
+    }
+  }
+}
+
+@mixin col_com_style {
+  float: left;
+  min-height: 1px;
+  padding: 10px;
+}
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*page style*/
+
+* {
+  @include resetCSS;
+}
+
+.container {
+  @include generateContainer;
+}
+
+.row {
+  @include generateRow;
+}
+
+[class*="col-"] {
+  @include col_com_style;
+}
+
+@include generateCol(sm);
+
+/*采用类似bootstrap媒体查询基于最小宽度的方式,
+因此对应最小宽度越大的媒体所使用的样式要放在后面，
+以防止被小宽度媒体的样式覆盖*/
+@media all and (min-width: 768px) {
+  @include generateCol(md);
+}
+
+.row:before,
+.row:after {
+  @include clearfix;
+}
+
+.abox {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  border: solid 1px #999;
+}
