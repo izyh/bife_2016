@@ -1,0 +1,760 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #838a95;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.panel .title {
+  height: 40px;
+  background-color: #f4f5f6;
+  padding: 0 21px;
+}
+.panel .title p {
+  font-size: 12px;
+  line-height: 40px;
+  color: #aaa;
+  font-family: "黑体", sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 56px;
+  background-color: #228abf;
+}
+nav .logo {
+  float: left;
+  width: 100%;
+  height: 32px;
+  padding-left: 51px;
+  margin: 12px -468px 12px 0;
+}
+nav .logo img {
+  width: 37px;
+  height: 32px;
+}
+nav form {
+  float: left;
+  margin: 14px 0;
+}
+nav form input {
+  width: 313px;
+  height: 28px;
+  padding: 0 35px;
+  border-radius: 14px;
+  border: none;
+  background: url("img/search.png") no-repeat white 18px;
+}
+nav .login {
+  float: left;
+  margin: 0 20px;
+  height: 56px;
+}
+nav .login img {
+  float: left;
+  width: 15px;
+  padding: 20px 0;
+}
+nav .login a {
+  line-height: 56px;
+  font-size: 12px;
+  color: white;
+  margin-left: 3px;
+  cursor: pointer;
+  font-family: "黑体", sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main {
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #2a2e3d;
+}
+
+aside {
+  float: left;
+  width: 260px;
+}
+
+.user {
+  padding: 20px 45px;
+  text-align: center;
+}
+.user .avatar {
+  float: left;
+  width: 59px;
+  height: 59px;
+  padding: 5px;
+  border-radius: 29px;
+  border: solid 1px #f6f5f5;
+}
+.user .userName {
+  line-height: 59px;
+  font-size: 16px;
+  color: white;
+  font-family: "黑体", sans-serif;
+}
+.user .userMsg {
+  margin-top: 25px;
+}
+.user .userMsg .collect, .user .userMsg .fans {
+  float: left;
+  width: 73px;
+}
+.user .userMsg .collect p, .user .userMsg .fans p {
+  font-size: 12px;
+  font-family: "宋体", sans-serif;
+  color: #6e8095;
+}
+.user .userMsg .collect p span, .user .userMsg .fans p span {
+  font-size: 16px;
+  font-family: "黑体", sans-serif;
+}
+.user .userMsg .collect {
+  border-right: solid 1px #6e8095;
+}
+
+.menu li {
+  font: 12px "黑体";
+  color: #6e8095;
+}
+.menu > ul > li {
+  padding: 15px 0 10px 45px;
+}
+.menu > ul > li.active {
+  background-color: #383d4e;
+}
+.menu > ul > li.active > a {
+  color: #fff;
+}
+.menu > ul > li:hover {
+  background-color: #383d4e;
+}
+.menu > ul > li > ul > li {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.menu > ul > li > ul > li.active > a {
+  color: #fff;
+}
+.menu > ul > li > ul > li > ul > li {
+  padding-left: 33px;
+  margin: 10px 0;
+}
+.menu > ul > li > ul > li > ul > li.active > a {
+  color: #fff;
+}
+.menu a {
+  height: 12px;
+}
+.menu a img {
+  float: left;
+  width: 12px;
+  margin: 0 5px;
+}
+.menu a span {
+  line-height: 12px;
+}
+
+.container {
+  float: left;
+  width: 1020px;
+  background-color: #eeeded;
+}
+
+.breadCrumb {
+  height: 30px;
+  background-color: #fff;
+}
+.breadCrumb ul {
+  margin-left: 30px;
+  font-size: 0;
+}
+.breadCrumb ul li {
+  display: inline-block;
+  line-height: 30px;
+}
+.breadCrumb ul li a, .breadCrumb ul li span {
+  font-size: 12px;
+  font-family: "黑体", sans-serif;
+  color: #aaa;
+}
+.breadCrumb ul li span {
+  padding: 0 5px;
+}
+.breadCrumb ul li.active a {
+  color: #6898c2;
+}
+
+.mainBody {
+  margin: 20px 70px 150px 60px;
+}
+
+.query {
+  height: 86px;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #aaa;
+  font-family: "黑体", sans-serif;
+  box-shadow: 1px 1px 5px #838a95;
+}
+.query form [class*="formGroup"] {
+  float: left;
+  padding: 0 15px;
+}
+.query form label {
+  margin: 0 7px;
+}
+.query form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 18px 0 8px;
+  margin-bottom: 5px;
+  height: 25px;
+  background: #fff url("img/select1.png") no-repeat 90% 40%;
+}
+.query form .formGroup1 {
+  width: 180px;
+}
+.query form .formGroup1 #queryItem {
+  width: 70px;
+}
+.query form .formGroup2 {
+  width: 220px;
+}
+.query form .formGroup2 .wrap {
+  float: left;
+}
+.query form .formGroup2 .wrap #buyer, .query form .formGroup2 .wrap #seller {
+  width: 116px;
+}
+.query form .formGroup2 .huan {
+  float: left;
+  padding: 7.5px 0;
+}
+.query form .formGroup2 .huan img {
+  width: 22px;
+  height: 11px;
+}
+.query form .formGroup2 .huan p {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  margin-left: 14px;
+  margin-top: -3px;
+  text-align: center;
+  line-height: 16px;
+  background-color: #ababab;
+}
+.query form .formGroup3 {
+  width: 330px;
+}
+.query form .formGroup3 #data {
+  width: 120px;
+  height: 25px;
+  margin-bottom: 5px;
+  padding: 0 8px;
+}
+.query form .formGroup3 #time, .query form .formGroup3 #people {
+  width: 70px;
+}
+.query form .formGroup3 #deal {
+  width: 120px;
+}
+.query form .formGroup4 {
+  padding: 13px 0;
+}
+.query form .formGroup4 input {
+  margin: 0 8px;
+  width: 50px;
+  height: 26px;
+  color: #fff;
+  border: solid 1px #388ac1;
+  border-radius: 3px;
+  background-color: #388ac1;
+}
+.query form .formGroup4 input:hover {
+  color: #388ac1;
+  background-color: #fff;
+}
+
+.price {
+  height: 65px;
+  margin: 0 -2.5px 22px;
+  font-size: 0;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.price a {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 65px;
+  margin: 0 2.5px;
+  box-shadow: -1px -1px 2px #838a96;
+  background-color: #fff;
+}
+.price a img {
+  width: 11px;
+  height: 17px;
+  margin: 24px 9.5px;
+}
+.price ul {
+  display: inline-block;
+  vertical-align: top;
+}
+.price ul li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 110px;
+  height: 65px;
+  margin: 0 2.5px;
+  color: #323333;
+  font-size: 12px;
+  line-height: 28px;
+  border-top: solid 4px transparent;
+  box-shadow: -1px -1px 2px #838a96;
+  background-color: #fff;
+}
+.price ul li p span {
+  color: #ababab;
+}
+.price ul li p em {
+  font-size: 21px;
+  font-style: normal;
+  color: #ec6500;
+}
+.price ul li.active {
+  border-top: solid 4px #4288c8;
+}
+.price .history {
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  height: 65px;
+  margin: 0 2.5px;
+  color: #535353;
+  font-size: 12px;
+  line-height: 65px;
+  box-shadow: -1px -1px 1px #838a96;
+  background-color: #fff;
+}
+.price .history img {
+  float: left;
+  margin: 17px 11px 0 19px;
+}
+
+.statistic {
+  margin: 0 -15px 14px;
+  font-size: 12px;
+  color: #323333;
+  font-family: "黑体", sans-serif;
+}
+.statistic p {
+  margin: 6px 15px;
+}
+.statistic [class*="item"] {
+  float: left;
+  width: 200px;
+  height: 70px;
+  margin: 0 15px;
+  border-left: solid 4px;
+  background-color: #fff;
+  box-shadow: 0 0 2px #838a96;
+}
+.statistic [class*="item"] p {
+  float: left;
+  line-height: 35px;
+  margin: 0 8px;
+}
+.statistic [class*="item"] p span {
+  font-size: 10px;
+  color: #aaa;
+}
+.statistic [class*="item"] div {
+  float: left;
+  width: 60px;
+  height: 47px;
+  margin: 11.5px 0 11.5px 68px;
+}
+.statistic .item1 {
+  border-left-color: #43b29e;
+}
+.statistic .item1 div {
+  background-color: #43b29e;
+}
+.statistic .item2 {
+  border-left-color: #398bc2;
+}
+.statistic .item2 div {
+  background-color: #398bc2;
+}
+.statistic .item3 {
+  border-left-color: #cf4a36;
+}
+.statistic .item3 div {
+  background-color: #cf4a36;
+}
+.statistic .item4 {
+  border-left-color: #e2cd47;
+}
+.statistic .item4 div {
+  background-color: #e2cd47;
+}
+
+.project {
+  margin: 0 -5px 10px;
+  height: 356px;
+}
+.project .projectGroup {
+  float: left;
+  margin: 0 5px;
+  width: 530px;
+}
+.project .projectGroup .content {
+  padding: 13px 20px 24px;
+}
+.project .projectGroup .content .tabs {
+  position: relative;
+}
+.project .projectGroup .content .tabs li {
+  float: left;
+}
+.project .projectGroup .content .tabs li input[type="radio"] {
+  display: none;
+}
+.project .projectGroup .content .tabs li input[type="radio"]:checked ~ .tab-content {
+  display: block;
+}
+.project .projectGroup .content .tabs li input[type="radio"]:checked + label {
+  position: relative;
+  z-index: 1;
+  border: solid 1px #cacbcb;
+  border-bottom: none;
+  background-color: #fff;
+}
+.project .projectGroup .content .tabs li .tab-content {
+  display: none;
+  position: absolute;
+  top: 29px;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  margin: 0 2px;
+  padding: 28px 38px;
+  border: solid 1px #cacbcb;
+  border-radius: 0 5px 5px 5px;
+  background-color: #fff;
+}
+.project .projectGroup .content .tabs li label {
+  display: block;
+  width: 82px;
+  height: 30px;
+  text-align: center;
+  line-height: 28px;
+  margin: 0 2px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  border: solid 1px #ededf0;
+  background-color: #ededf0;
+}
+.project .projectGroup .content .tabs li #tab-content1 table, .project .projectGroup .content .tabs li #tab-content1 tr, .project .projectGroup .content .tabs li #tab-content1 td {
+  border: solid 1px #aaa;
+  border-collapse: collapse;
+}
+.project .projectGroup .content .tabs li #tab-content1 td {
+  width: 100px;
+  height: 30px;
+  color: #535353;
+  font: 12px "宋体";
+  padding-left: 16px;
+}
+.project .projectGroup .content .tabs li #tab-content1 td:hover {
+  background-color: #f4f6f7;
+}
+.project .projectDetail {
+  float: left;
+  margin: 0 5px;
+  width: 350px;
+}
+.project .projectDetail .content {
+  padding: 10px 35px 35px;
+  font: 12px "Microsoft YaHei";
+}
+.project .projectDetail .content h6 {
+  color: #c3c2c2;
+  padding: 3px 15px;
+}
+.project .projectDetail .content p {
+  color: #535353;
+  padding: 3px 15px;
+}
+.project .projectDetail .content .report {
+  margin-top: 8px;
+  border-top: solid 1px #aaa;
+  border-bottom: solid 1px #aaa;
+}
+.project .projectDetail .content .report .person {
+  float: left;
+}
+.project .projectDetail .content .report .how-much {
+  float: left;
+  width: 95px;
+  border-right: solid 1px #aaa;
+}
+.project .projectDetail .content .describe {
+  height: 125px;
+  border-bottom: solid 1px #aaa;
+}
+.project .projectDetail .content form {
+  margin: 5px 0;
+}
+.project .projectDetail .content form label {
+  vertical-align: middle;
+  color: #c3c2c2;
+  padding-left: 8px;
+}
+.project .projectDetail .content form input[type="checkbox"] {
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  margin: 3px;
+}
+.project .projectDetail .content form input[type="submit"] {
+  vertical-align: middle;
+  margin-left: 120px;
+  width: 50px;
+  height: 26px;
+  color: #fff;
+  border: solid 1px #388ac1;
+  border-radius: 3px;
+  background-color: #388ac1;
+}
+.project .projectDetail .content form input[type="submit"]:hover {
+  color: #388ac1;
+  background-color: #fff;
+}
+
+.others {
+  margin: 0 -5px 10px;
+  height: 355px;
+}
+.others .calendar {
+  float: left;
+  margin: 0 5px;
+  width: 350px;
+}
+.others .calendar .content {
+  padding: 10px 20px 23px 22px;
+}
+.others .calendar .content .filter {
+  font-size: 0;
+}
+.others .calendar .content .filter select, .others .calendar .content .filter button {
+  height: 20px;
+  margin: 0 2px;
+  font: 12px "宋体";
+  color: #535353;
+}
+.others .calendar .content .filter select[title="year"] {
+  width: 63px;
+}
+.others .calendar .content .filter select[title="month"] {
+  width: 84px;
+}
+.others .calendar .content .filter select[title="dete"] {
+  width: 75px;
+}
+.others .calendar .content .filter button {
+  width: 63px;
+  border: solid 1px #aaa;
+  background-color: #fff;
+}
+.others .calendar .content .filter button:hover {
+  color: #fff;
+  border: none;
+  background-color: #388ac1;
+}
+.others .calendar .content table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  border: solid 1px transparent;
+}
+.others .calendar .content table tr {
+  height: 45px;
+}
+.others .calendar .content table tr:first-child {
+  height: 32px;
+  border-top: solid 2px #65a9dd;
+  border-bottom: solid 2px #aaa;
+}
+.others .calendar .content table tr td {
+  width: 44px;
+  font: 11px "黑体";
+  color: #323333;
+  text-align: center;
+}
+.others .calendar .content table tr td p {
+  width: 40px;
+  height: 40px;
+  line-height: 19px;
+}
+.others .calendar .content table tr td.holiday em {
+  color: red;
+}
+.others .calendar .content table tr td.weekend span {
+  color: red;
+}
+.others .calendar .content table tr td.mark p {
+  border: solid 1px #f4c21d;
+}
+.others .calendar .content table tr td p:hover {
+  background-color: #f4f6f7;
+}
+.others .calendar .content table tr th {
+  width: 44px;
+  font: 12px "黑体";
+  color: #535353;
+}
+.others .brand {
+  float: left;
+  margin: 0 5px;
+  width: 530px;
+}
+.others .brand .content {
+  padding: 18px 40px;
+}
+.others .brand .content table, .others .brand .content tr, .others .brand .content th, .others .brand .content td {
+  font: 12px "黑体";
+  color: #323333;
+  line-height: 24px;
+  border-collapse: collapse;
+  border: solid 1px #838a96;
+}
+.others .brand .content th {
+  font-size: 13px;
+  color: #231815;
+}
+.others .brand .content th:last-child {
+  text-align: left;
+  padding-left: 28px;
+}
+.others .brand .content table tr {
+  height: 25px;
+}
+.others .brand .content table tr td:first-child {
+  width: 65px;
+  text-align: center;
+}
+.others .brand .content table tr td:nth-child(2) {
+  width: 90px;
+  text-align: center;
+}
+.others .brand .content table tr td:last-child {
+  width: 290px;
+  text-align: left;
+  padding: 0 18px 0 33px;
+}
+.others .brand .content table tr:hover {
+  background-color: #f4f6f7;
+}
+.others .brand .content span[class^="index"] {
+  float: right;
+  width: 168px;
+  height: 4px;
+  margin: 10px 0;
+  background-color: #ddd;
+}
+.others .brand .content span[class^="index"] em {
+  float: left;
+  width: 55px;
+  height: 4px;
+  background-color: #7ecaf0;
+}
+.others .brand .content span.index1 em {
+  width: 140px;
+  background-color: #ec6e51;
+}
+.others .brand .content span.index2 em {
+  width: 120px;
+  background-color: #ef8150;
+}
+.others .brand .content span.index3 em {
+  width: 105px;
+  background-color: #f19e4f;
+}
+.others .brand .content span.index4 em {
+  width: 97px;
+}
+.others .brand .content span.index5 em {
+  width: 86px;
+}
+.others .brand .content span.index6 em {
+  width: 80px;
+}
+.others .brand .content span.index7 em {
+  width: 74px;
+}
+.others .brand .content span.index8 em {
+  width: 64px;
+}
+.others .brand .content span.index9 em {
+  width: 60px;
+}
+
+/*.test {
+  .outer {
+    width: 100px;
+    height: 100px;
+    margin: 50px 0;
+    background-color: red;
+    .inner {
+      width: 50px;
+      height: 50px;
+      background-color: #00A3CC;
+    }
+  }
+  table tr td {
+    width: 200px;
+    height: 200px;
+    line-height: 198px;
+    border: solid 1px #000;
+    span {
+      float: right;
+      width: 100px;
+      height: 100px;
+      margin: 50px 0;
+      background-color: red;
+      em {
+        //float: left;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: #00A3CC;
+      }
+    }
+  }
+}*/
+
+/*# sourceMappingURL=base.css.map */

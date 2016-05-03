@@ -233,8 +233,7 @@ nav ul .active {
   border: none;
   font-size: 12px;
   color: #a8aaaa;
-  background: url("img/21.png") no-repeat 98% center transparent;
-  background-color: #fff;
+  background: url("img/21.png") no-repeat 98% center #fff;
 }
 .map .search form input[type=submit] {
   width: 236px;
